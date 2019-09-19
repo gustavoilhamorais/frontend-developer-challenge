@@ -1,10 +1,9 @@
 import React from "react";
 import ShareForm from "./ShareForm";
 import MerchandiseList from "./MerchandiseList";
-import { Grid, Title, LoadMerchandise } from "../styles/body";
-import MerchanContainer, {
-  MerchanContext
-} from "../../api/MerchandiseContext";
+import { Grid, Title } from "../styles/body";
+import LoadMerchanBtn from './LoadMerchanBtn';
+import MerchanContainer from "../../api/MerchandiseContext";
 
 const Body = () => (
   <MerchanContainer>
@@ -13,13 +12,7 @@ const Body = () => (
       <MerchandiseList />
     </Grid>
     <Grid>
-      <MerchanContext>
-        {provider => (
-          !provider.state.isLoading
-          ? <LoadMerchandise onClick={() => provider.loadMerchandise()}>Ainda mais produtos aqui!</LoadMerchandise>
-          : <></>
-        )}
-      </MerchanContext>
+      <LoadMerchanBtn/>
     </Grid>
     <ShareForm />
   </MerchanContainer>
