@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { HashRouter, Route, Switch } from "react-router-dom";
+import { Main } from "./views";
 
 class App extends Component {
-
   render() {
     return (
-      <h1>Hello React</h1>
+      <HashRouter>
+        <Switch>
+          <Route path="/" name="Home" component={Main} />} />
+        </Switch>
+      </HashRouter>
     );
   }
 }
