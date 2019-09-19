@@ -6,6 +6,8 @@ import LoadMerchanBtn from './LoadMerchanBtn';
 import MerchanContainer from "../../api/MerchandiseContext";
 
 const Body = () => (
+  // Context containers are the Components on the top of the hierarchy
+  // Here, the MerchanContainer is just creating a link beetween him and his children.
   <MerchanContainer>
     <Title>Sua seleção especial</Title>
     <Grid>

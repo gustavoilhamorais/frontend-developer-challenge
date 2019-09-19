@@ -8,6 +8,7 @@ const ShareForm = () => {
   const [email, setEmail] = useState("");
 
   const handleChange = event => {
+    // Save user inputs to the 'name' and 'email' methods
     switch (event.target.name) {
       case "name":
         setName(event.target.value);
@@ -19,6 +20,7 @@ const ShareForm = () => {
   };
 
   const submitData = () => {
+    // after validation, if data gets here it would be sent to backend or whatever
     Swal.fire({
       title: 'Show!',
       html: `<p>Em instantes, ${name} receberá nosso link no email ${email}.</p>`,
@@ -28,6 +30,7 @@ const ShareForm = () => {
   };
 
   const validateForm = () => {
+    // Simple validate if data isn't empty/fake data
     const validateName = isNull(name) || isUndefined(name) || name === "";
     const validateEmail = isNull(email) || isUndefined(email) || email === "";
     if (!validateName && !validateEmail) emailStrongValidation(email);
@@ -40,6 +43,7 @@ const ShareForm = () => {
   };
 
   const emailStrongValidation = email => {
+    // Validate characters in a email string
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) submitData();
     else Swal.fire({
       title: 'Atenção',
@@ -47,6 +51,7 @@ const ShareForm = () => {
       type: 'error',
       showCloseButton: true
     });
+    // Alert if email is invalid. Does not must return nothing t any function.
     return false;
   };
 

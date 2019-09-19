@@ -4,6 +4,8 @@ import { MerchanContext } from "../../../api/MerchandiseContext";
 import { CardText } from "../../styles/Card";
 
 const MerchandiseList = () => (
+  // Consuming the Context, and doing a map over the state
+  // if loading, renders fragment, else render product's cards in row
   <MerchanContext.Consumer>
     {provider => {
       return !provider.state.isLoading ? (
