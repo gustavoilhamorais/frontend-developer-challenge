@@ -1,5 +1,12 @@
 O projeto raíz foi criado utilizando [Create React App](https://github.com/facebook/create-react-app).
 
+Tecnologias utilizadas pela aplicação:
+SweetAlert2 para exibir popups;
+ReactLoading para animações de loading;
+StyledComponents para gerenciamento de estilos;
+Fetch API para requisição HTTP;
+React Context API para centralização e distribuição de props;
+
 ## Scripts Disponíveis
 
 Dentro do diretório do projeto você pode rodar:
