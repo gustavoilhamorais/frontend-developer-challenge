@@ -28,4 +28,7 @@ export const LoadMerchandise = styled.button`
   border: 1px solid #707070;
   border-radius: 4px;
   margin-bottom: 10%;
+  :hover {
+      border-bottom: 2px solid #606060;
+    }
 `;
