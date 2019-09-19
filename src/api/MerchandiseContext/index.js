@@ -23,6 +23,7 @@ export default class MerchanContainer extends Component {
   }
 
   async loadMerchandise (url) {
+    this.handleLoading(true);
     const response = await this.apiGet(url);
     if (this.validateApiResponse(response)) this.handleState(response);
   }
@@ -34,12 +35,19 @@ export default class MerchanContainer extends Component {
   handleState(data) {
     const newMerchanArray = [...this.state.merchandise, ...data.products];
     this.setState({
-      isLoading: false,
       nextPage: 'https://' + data.nextPage,
       merchandise: newMerchanArray,
-      total: this.state.total + data.products.length,
+      total: data.products.length,
     });
-    console.log(data);
+
+    this.handleLoading(false);
+  }
+
+  handleLoading(bool) {
+    !bool ? setTimeout(() => {
+      this.setState({ isLoading: bool });
+    }, 2000)
+    : this.setState({ isLoading: bool });
   }
 
   render() {

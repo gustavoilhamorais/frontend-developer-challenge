@@ -36,9 +36,7 @@ const MerchandiseList = () => (
         ) : (
           <h1>Sem Produtos para exibir.</h1>
         )
-      ) : (
-        <h1>Carregando ...</h1>
-      );
+      ) : (<></>);
     }}
   </MerchanContext.Consumer>
 );

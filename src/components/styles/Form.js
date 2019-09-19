@@ -5,6 +5,7 @@ const Form = styled.div`
   letter-spacing: 0;
   opacity: 1;
   text-align: center;
+  position: static;
 
   div.row {
     flex: 1;

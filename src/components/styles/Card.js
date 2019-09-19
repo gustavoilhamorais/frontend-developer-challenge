@@ -29,6 +29,11 @@ export const Card = styled.div`
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
   }
+
+  div.loading {
+    margin: 30%;
+    background-color: #ffffff;
+  }
 `;
 
 export const CardText = styled.div`
