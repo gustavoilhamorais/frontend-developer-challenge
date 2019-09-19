@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "../../styles/Form";
 import { isNull, isUndefined } from "util";
+import Swal from "sweetalert2";
 
 const ShareForm = () => {
   const [name, setName] = useState("");
@@ -18,24 +19,34 @@ const ShareForm = () => {
   };
 
   const submitData = () => {
-    window.alert(
-      `Show! Em instantes, ${name} receberá nosso link no email ${email}.`
-    );
+    Swal.fire({
+      title: 'Show!',
+      html: `<p>Em instantes, ${name} receberá nosso link no email ${email}.</p>`,
+      type: 'success',
+      showCloseButton: true
+    });
   };
 
   const validateForm = () => {
     const validateName = isNull(name) || isUndefined(name) || name === "";
     const validateEmail = isNull(email) || isUndefined(email) || email === "";
     if (!validateName && !validateEmail) emailStrongValidation(email);
-    else
-      window.alert(
-        "Você precisa informar um email e um nome válido, por favor."
-      );
+    else Swal.fire({
+      title: 'Atenção',
+      html: '<p>Você precisa informar um email e um nome válido, por favor.</p>',
+      type: 'warning',
+      showCloseButton: true
+    });
   };
 
   const emailStrongValidation = email => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) submitData();
-    else alert("Por favor insira um endereço de email válido!");
+    else Swal.fire({
+      title: 'Atenção',
+      html: '<p>Por favor insira um endereço de email válido!</p>',
+      type: 'error',
+      showCloseButton: true
+    });
     return false;
   };
 
