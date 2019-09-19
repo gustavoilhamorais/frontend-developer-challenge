@@ -35,9 +35,9 @@ const ShareForm = () => {
         Quer que seus amigos também ganhem a lista personalizada deles? Preencha
         agora!
       </h3>
-      <row>
-        <column></column>
-        <column>
+      <div className="row">
+        <div className="column"></div>
+        <div className="column">
           <span>Nome do seu amigo</span>
           <input
             type="text"
@@ -45,8 +45,8 @@ const ShareForm = () => {
             value={name}
             onChange={event => handleChange(event)}
           />
-        </column>
-        <column>
+        </div>
+        <div className="column">
           <span>Email</span>
           <input
             type="email"
@@ -54,8 +54,8 @@ const ShareForm = () => {
             value={email}
             onChange={event => handleChange(event)}
           />
-        </column>
-      </row>
+        </div>
+      </div>
       <button onClick={() => validateForm()}>Enviar agora</button>
     </Form>
   );

@@ -3,7 +3,7 @@ import { LoadMerchandise } from '../../styles/body';
 import { MerchanContext } from '../../../api/MerchandiseContext';
 
 const LoadMerchanBtn = () => (
-  <MerchanContext>
+  <MerchanContext.Consumer>
     {provider =>
       !provider.state.isLoading ? (
         <LoadMerchandise onClick={() => provider.loadMerchandise()}>
@@ -13,7 +13,7 @@ const LoadMerchanBtn = () => (
         <></>
       )
     }
-  </MerchanContext>
+  </MerchanContext.Consumer>
 );
 
 export default LoadMerchanBtn;

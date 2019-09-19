@@ -3,9 +3,8 @@ import { Card } from "../../styles/Card";
 
 const MerchandiseCard = props => {
   return (
-    <Card key={props.cardkey + "card"}>
+    <Card>
       <img
-        key={props.imgkey}
         src={props.src}
         alt={props.alt}
         width={props.width}

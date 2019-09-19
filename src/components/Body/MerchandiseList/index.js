@@ -4,7 +4,7 @@ import { MerchanContext } from "../../../api/MerchandiseContext";
 import { CardText } from "../../styles/Card";
 
 const MerchandiseList = () => (
-  <MerchanContext>
+  <MerchanContext.Consumer>
     {provider => {
       return !provider.state.isLoading ? (
         provider.state.merchandise.length > 0 ? (
@@ -12,8 +12,8 @@ const MerchandiseList = () => (
             {provider.state.merchandise.map((merchan, index) => (
               <MerchandiseCard
                 md="3"
-                cardkey={merchan.id}
-                imgkey={index}
+                id={merchan.id}
+                key={index}
                 src={merchan.image}
                 alt={merchan.name}
                 width={"100%"}
@@ -40,7 +40,7 @@ const MerchandiseList = () => (
         <h1>Carregando ...</h1>
       );
     }}
-  </MerchanContext>
+  </MerchanContext.Consumer>
 );
 
 export default MerchandiseList;

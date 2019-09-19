@@ -6,13 +6,13 @@ const Form = styled.div`
   opacity: 1;
   text-align: center;
 
-  row {
+  div.row {
     flex: 1;
     display: flex;
     flex-direction: row;
   }
 
-  column {
+  div.column {
     flex: 1;
     display: flex;
     flex-direction: column;
