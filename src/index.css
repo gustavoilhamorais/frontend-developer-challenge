@@ -6,13 +6,20 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: Regular Helvetica Neue;
   color: var(--primary);
-  font-size: 1.4rem;
+  font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
